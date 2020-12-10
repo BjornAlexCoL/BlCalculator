@@ -35,6 +35,7 @@ public class blCalculator
                 }
             case 'C': {
                 dAccResult = 0;
+                dResult = 0;
                 break;
                 }
             case 'E': {
@@ -42,7 +43,7 @@ public class blCalculator
                 break;
                 }
             default: {
-                dResult += dDoTheMath(sOperation.charAt(0));
+                dResult = dDoTheMath(sOperation.charAt(0));
                 break;
                 }
             }
