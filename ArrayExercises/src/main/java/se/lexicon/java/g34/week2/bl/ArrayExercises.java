@@ -1,5 +1,6 @@
 package se.lexicon.java.g34.week2.bl;
 
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -327,6 +328,7 @@ public class ArrayExercises {
     }
 
     public static void printArrayTable(int[][] productArray) {
+        System.out.println();
         for (int[] row : productArray) {
             for (int col : row) {
                 System.out.print(col);
@@ -379,27 +381,29 @@ public class ArrayExercises {
     }
 
     public static int[] assignArrayWithRandoms(int amount, int highValue) {
-        int[] rndArray = new int[amount];
+        int[] rndArray = new int[0];
         Random rnd = new Random();
-        for (int index : rndArray) {
-            index = rnd.nextInt(highValue);
+        for (int index = 0; index < amount; index++) {
+            rndArray = addElement(rndArray, rnd.nextInt(highValue) + 1);
+            System.out.print(rndArray[index] + " ");
         }
         return rndArray;
     }
 
     public static int[][] oddEvenSortArray(int[] numList) {
         int[][] sortMatris = new int[2][];
-        for (int num : numList) {
-            if (num % 2 == 0) {
-                //sortMatris[1]=addElement(sortMatris[1],num);
-                sortMatris[1][]=Arrays.copyOf(sortMatris,sortMatris[1].length+1);
-                sortMatris[1][sortMatris[].length]=num;
-            } else {
-                //addElement(sortMatris[1][],num);
-                //sortMatris[0]=Arrays.copyOf(sortMatris[0],sortMatris[0].length+1 );
-                //sortMatris[0][sortMatris[0].length]=num;
+        int[] evenArray=new int[0];
+        int[] oddArray=new int[0];
+        for (int number:numList) {
+                if (number % 2 == 1) {
+                    oddArray=addElement(oddArray, number);
+                }
+                else {
+                    evenArray=addElement(evenArray, number);
+                }
             }
-        }
+        sortMatris[0]=Arrays.copyOf(oddArray,oddArray.length);
+        sortMatris[1]=Arrays.copyOf(evenArray,evenArray.length);
         return sortMatris;
     }
 }
